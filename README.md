@@ -1,7 +1,7 @@
 # Supplementary Code
 
-This directory contains supplementary code to the paper "Longitudinal modeling 
-of age-dependent latent traits with generalized additive latent and mixed models"
+This directory contains supplementary code to the paper [Longitudinal modeling 
+of age-dependent latent traits with generalized additive latent and mixed models](https://arxiv.org/abs/2105.02488)
 by Øystein Sørensen, Anders M. Fjell, and Kristine B. Walhovd.
 
 All paths are relative to the

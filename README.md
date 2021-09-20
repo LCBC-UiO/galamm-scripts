@@ -1,7 +1,13 @@
 # Supplementary Code
 
+<<<<<<< HEAD
 This directory contains supplementary code to the paper "Longitudinal modeling 
 of age-dependent latent traits with generalized additive latent and mixed models".
+=======
+This directory contains supplementary code to the paper [Longitudinal modeling 
+of age-dependent latent traits with generalized additive latent and mixed models](https://arxiv.org/abs/2105.02488)
+by Øystein Sørensen, Anders M. Fjell, and Kristine B. Walhovd.
+>>>>>>> a283942718e13c21db6772fecf8c2d41cc72e48e
 
 All paths are relative to the
 top directory. If `latent-variable-gamm.Rproj` is opened in RStudio, the top

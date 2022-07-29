@@ -4,7 +4,7 @@ This directory contains supplementary code to the paper "Longitudinal modeling
 of age-dependent latent traits with generalized additive latent and mixed models".
 
 All paths are relative to the
-top directory. If `latent-variable-gamm.Rproj` is opened in RStudio, the top
+top directory. If `galamm-scripts.Rproj` is opened in RStudio, the top
 directory will automatically be the working directory, and all scripts should
 run with no modifications. The scripts require R version 4.0.0 or higher; due
 to changes in the `approxfun()` function the code will not run with older versions

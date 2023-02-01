@@ -223,6 +223,8 @@ transf_df <- dat %>%
   group_by(itemgroup_retest) %>% 
   summarise(location = mean(value), scale = sd(value))
 
+saveRDS(transf_df, file = "results/cognition_model/transf_df.rds")
+
 beta_est[str_detect(names(beta_est), "^teststroop.*[1-2]+$")] <- 
   -(beta_est[str_detect(names(beta_est), "^teststroop.*[1-2]+$")] * transf_df$scale[[1]] + transf_df$location[[1]])
 

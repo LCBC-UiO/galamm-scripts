@@ -113,15 +113,40 @@ p1 / p2
 ggsave("results/cognition_model/simulation/figures/cog_sim_parametric.pdf",
        plot = p1 / p2, width = 12, height = 12, units = "cm")
 
+
+transf_df <- readRDS("results/cognition_model/transf_df.rds")
+
+fff <- function(x){
+  x %>% 
+    transmute(
+      parameter = parameter,
+      estimate = round(true_value, 2),
+      asymptotic_ci = paste0("(", round(asymptotic_ci_lower, 2), ", ", round(asymptotic_ci_upper, 2), ")"),
+      bootstrap_estimate = round(mean_est, 2),
+      bootstrap_ci = paste0("(", round(bootstrap_ci_lower, 2), ", ", round(bootstrap_ci_upper, 2), ")")
+    )
+}
+
 beta_agg %>% 
   select(parameter, true_value, mean_est, contains("ci")) %>% 
-  transmute(
-    parameter = parameter,
-    estimate = round(true_value, 2),
-    asymptotic_ci = paste0("(", round(asymptotic_ci_lower, 2), ", ", round(asymptotic_ci_upper, 2), ")"),
-    bootstrap_estimate = round(mean_est, 2),
-    bootstrap_ci = paste0("(", round(bootstrap_ci_lower, 2), ", ", round(bootstrap_ci_upper, 2), ")")
-  )
+  fff()
+
+# Deal with Stroop conditions
+beta_agg %>% 
+  filter(parameter == "retest:itemgroup_reteststroop_12") %>% 
+  select(parameter, true_value, mean_est, contains("ci")) %>% 
+  mutate(
+    across(c(mean_est, true_value, contains("ci")), ~ -.x * transf_df$scale[[1]])
+  ) %>% 
+  fff()
+
+beta_agg %>% 
+  filter(parameter == "retest:itemgroup_reteststroop_34") %>% 
+  select(parameter, true_value, mean_est, contains("ci")) %>% 
+  mutate(
+    across(c(mean_est, true_value, contains("ci")), ~ -.x * transf_df$scale[[2]])
+  ) %>% 
+  fff()
 
 lambda_agg %>% 
   select(parameter, true_value, mean_est, contains("ci")) %>% 

@@ -1,7 +1,7 @@
 # Supplementary Code
 
-This directory contains supplementary code to the paper "Longitudinal modeling 
-of age-dependent latent traits with generalized additive latent and mixed models". The actual data cannot be shared due to privacy, so we have instead created simulated datasets resembling the actual data, for which all analyses and simulations can be run. The results will obviously differ from those presented in the paper.
+This directory contains supplementary code to the paper ["Longitudinal modeling 
+of age-dependent latent traits with generalized additive latent and mixed models"](https://arxiv.org/abs/2105.02488). The actual data cannot be shared due to privacy, so we have instead created simulated datasets resembling the actual data, for which all analyses and simulations can be run. The results will obviously differ from those presented in the paper.
 
 All paths are relative to the
 top directory. If `galamm-scripts.Rproj` is opened in RStudio, the top
